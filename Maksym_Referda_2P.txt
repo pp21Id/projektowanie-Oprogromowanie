@@ -1,0 +1,120 @@
+
+ELEKTRO-BUD – SYSTEM MAGAZYNOWY
+
+1. WYMAGANE FUNKCJE
+1.1. Produkty - Produkt posiada kod EAN, nazwę i kategorię. - Produkt ma określone miejsce przechowywania: sektor, regał i półka. - System pozwala wyszukać produkt po kodzie EAN lub nazwie. - System pokazuje lokalizację produktu.
+
+1.2. Stan magazynowy - System przechowuje aktualną ilość każdego produktu. - Przyjęcie towaru zwiększa stan magazynowy. - Wydanie towaru zmniejsza stan magazynowy. - System nie pozwala wydać większej ilości niż aktualny stan. - System musi poprawnie obsługiwać sytuację, gdy dwóch pracowników wykonuje operację dotyczącą tego samego produktu w tym samym czasie.
+
+1.3. Przyjmowanie towaru - Pracownik magazynu może zarejestrować przyjęcie towaru. - Przyjęcie zapisuje: produkt, ilość, osobę wykonującą operację i datę wykonania.
+
+1.4. Wydawanie towaru - Pracownik magazynu może zarejestrować wydanie towaru. - Przed wydaniem system sprawdza aktualny stan magazynowy. - Wydanie zapisuje: produkt, ilość, osobę wykonującą operację i datę wykonania.
+
+1.5. Historia operacji - System przechowuje historię operacji magazynowych, w tym informacje dotyczące tego, jakiego produktu dotyczyła operacja.
+
+1.6. Użytkownicy - System umożliwia zarządzanie użytkownikami, ich lokalizacją i uprawnieniami. - System przechowuje stan magazynowy, historię operacji i korzysta z danych użytkowników. - System nadaje uprawnienia i obsługuje sytuacje związane z zapomnianym hasłem.
+
+1.7. Logowanie i bezpieczeństwo - System wymaga uwierzytelnienia użytkownika. - Każdy użytkownik korzysta z własnego konta. - Dostępne funkcje zależą od uprawnień użytkownika. - Hasła są przechowywane w bezpieczny sposób.
+
+1.8. Raporty - Kierownik może uzyskiwać informacje o stanie i funkcjonowania magazynu. - System powinien umożliwiać tworzenie raportów. - Dokładny zakres raportów zostanie doprecyzowany podczas analizy wymagań.
+
+2. WYMAGANIA NIEFUNKCJONALNE
+System powinien umożliwiać sprawną pracę magazynierów.
+
+Wyszukiwanie produktu i obsługa kodu produktu powinny działać bez długiego oczekiwania.
+
+Oczekiwany czas reakcji systemu to około 1–2 sekundy.
+
+System powinien zapewniać bezpieczne logowanie.
+
+Hasła nie mogą być możliwe do zwykłego odczytania.
+
+Użytkownik powinien mieć dostęp tylko do funkcji zgodnych z jego uprawnieniami.
+
+System powinien poprawnie obsługiwać równoczesne operacje dotyczące tego samego produktu.
+
+Kierownik powinien móc korzystać z informacji o magazynie również poza stanowiskiem bezpośrednio w magazynie.
+
+3. AKTORZY
+1. Magazynier
+
+wyszukuje produkty,
+
+sprawdza lokalizację,
+
+sprawdza stan produktu,
+
+przyjmuje towar,
+
+wydaje towar.
+
+2. Kierownik magazynu
+
+przegląda stany magazynowe,
+
+zarządza informacją o produktach,
+
+przegląda historię operacji,
+
+korzysta z raportów.
+
+3. Administrator
+
+zarządza kontami użytkowników,
+
+nadaje uprawnienia,
+
+obsługuje sytuacje związane z zapomnianym hasłem.
+
+4. DIAGRAM PRZYPADKÓW UŻYCIA UML
+text
++----------------------------------------------+
+
+SYSTEM MAGAZYNOWY
+
++--------------------------------------------------+
+|                 SYSTEM MAGAZYNOWY                |
+|                                                  |
+| (Logowanie) (Wyszukanie produktu) (Sprawdzenie   |
+| lokalizacji) (Sprawdzenie stanu magazynowego)    |
+| (Przyjęcie towaru) (Wydanie towaru)              |
+| (Przeglądanie historii) (Zarządzanie produktami) |
+| (Raporty)                                        |
+| (Zarządzanie kontami) (Nadawanie uprawnień)      |
+| (Obsługa zapomnianego hasła)                     |
++--------------------------------------------------+
+Magazynier:
+
+-Logowanie
+
+-Wyszukanie produktu
+
+-Sprawdzenie lokalizacji
+
+-Sprawdzenie stanu magazynowego
+
+-Przyjęcie towaru
+
+-Wydanie towaru
+
+Kierownik magazynu:
+
+-Logowanie
+
+-Sprawdzenie stanu magazynowego
+
+-Zarządzanie produktami
+
+-Przeglądanie historii
+
+-Raporty
+
+Administrator:
+
+-Logowanie
+
+-Zarządzanie kontami
+
+-Nadawanie uprawnień
+
+-6Obsługa zapomnianego hasła
